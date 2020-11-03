@@ -6,6 +6,8 @@ namespace MementoLib
 {
     public class Game:IOriginator
     {
-
+        public class GameMemento
+        {
+        }
     }
 }

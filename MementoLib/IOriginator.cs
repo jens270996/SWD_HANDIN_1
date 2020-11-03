@@ -6,5 +6,7 @@ namespace MementoLib
 {
     public interface IOriginator
     {
+        IMemento Save();
+        void RestoreState(IMemento memento);
     }
 }
