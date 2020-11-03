@@ -14,7 +14,15 @@ namespace MementoLib
         {
             private List<Player> players;
 
+            public void AddPlayer(string mission, int troops, int countries)
+            {
+                players.Add(new Player(mission, troops, countries));
+            }
 
+            public void RemovePlayer()
+            {
+
+            }
         }
 
         public class Player
@@ -29,6 +37,16 @@ namespace MementoLib
             private string Mission;
             private int NumberOfTroops;
             private int NumberOfCountries;
+        }
+
+        public MementoLib.IMemento Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RestoreState(IMemento memento)
+        {
+            throw new NotImplementedException();
         }
     }
 }
