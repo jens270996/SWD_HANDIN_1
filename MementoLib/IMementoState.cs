@@ -4,9 +4,7 @@ using System.Text;
 
 namespace MementoLib
 {
-    public interface IMemento
+    public interface IMementoState
     {
-
-        public IMementoState MementoState { get; set; }
     }
 }
