@@ -55,5 +55,13 @@ namespace MementoLib
             players.Clear();
             foreach(var player in )
         }
+
+        public void ShowPlayers()
+        {
+            foreach (var item in players)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
