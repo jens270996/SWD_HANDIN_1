@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MementoLib;
+using System;
 
 namespace MementoApp
 {
@@ -7,6 +8,8 @@ namespace MementoApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            new Game();
+
         }
     }
 }
