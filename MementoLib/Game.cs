@@ -18,7 +18,7 @@ namespace MementoLib
 
             public void RemovePlayer(string name)
             {
-                players.Remove(name);
+                players.RemoveAll(Player => Player.PlayerName == name);
             }
         
 
@@ -32,7 +32,7 @@ namespace MementoLib
                 NumberOfCountries = countries;
             }
 
-            private string PlayerName;
+            public string PlayerName { get; set; }
             private string Mission;
             private int NumberOfTroops;
             private int NumberOfCountries;
