@@ -14,26 +14,28 @@ namespace MementoLib
         {
             private List<Player> players;
 
-            public void AddPlayer(string mission, int troops, int countries)
+            public void AddPlayer(string name, string mission, int troops, int countries)
             {
-                players.Add(new Player(mission, troops, countries));
+                players.Add(new Player(name, mission, troops, countries));
             }
 
-            public void RemovePlayer()
+            public void RemovePlayer(string name)
             {
-
+                players.Remove(name);
             }
         }
 
         public class Player
         {
-            public Player(string mission, int troops, int countries)
+            public Player(string name, string mission, int troops, int countries)
             {
+                PlayerName = name;
                 Mission = mission;
                 NumberOfTroops = troops;
                 NumberOfCountries = countries;
             }
 
+            private string PlayerName;
             private string Mission;
             private int NumberOfTroops;
             private int NumberOfCountries;
