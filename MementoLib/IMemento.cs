@@ -7,6 +7,6 @@ namespace MementoLib
     public interface IMemento
     {
         
-        void Restore();
+        IMemento Restore();
     }
 }
