@@ -22,7 +22,7 @@ namespace MementoLib
             }
         
 
-        public class Player
+        public class Player:ICloneable
         {
             public Player(string name, string mission, int troops, int countries)
             {
@@ -36,6 +36,11 @@ namespace MementoLib
             private string Mission;
             private int NumberOfTroops;
             private int NumberOfCountries;
+
+            public object Clone()
+            {
+                return new Player(this.PlayerName, this.Mission, this.NumberOfTroops, this.NumberOfCountries);
+            }
         }
 
         public MementoLib.IMemento Save()
@@ -43,7 +48,7 @@ namespace MementoLib
             var gamestate=new GameMementoState();
             foreach(var player in players)
             {
-                gamestate.Players.Add(player);
+                gamestate.Players.Add(player.Clone() as Player);
             }
 
             return new GameMemento(gamestate);
@@ -56,7 +61,7 @@ namespace MementoLib
             var state=memento.MementoState as GameMementoState;
             foreach(var player in state.Players)
             {
-                players.Add(player);
+                players.Add(player.Clone() as Player);
             }
         }
     }
