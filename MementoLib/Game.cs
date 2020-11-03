@@ -41,7 +41,7 @@ namespace MementoLib
 
         public MementoLib.IMemento Save()
         {
-            throw new NotImplementedException();
+
         }
 
         public void RestoreState(IMemento memento)
