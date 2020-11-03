@@ -6,7 +6,8 @@ namespace MementoLib
 {
     class GameMementoState
     {
-        string _oldState;
-        int _player;
+        string _oldState { get; set; }
+        int _player { get; set; }
+
     }
 }
