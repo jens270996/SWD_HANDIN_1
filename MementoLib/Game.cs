@@ -51,7 +51,11 @@ namespace MementoLib
         public void RestoreState(IMemento memento)
         {
             players.Clear();
-            foreach(var player in )
+            var state=memento.MementoState as GameMementoState;
+            foreach(var player in state.Players)
+            {
+                players.Add(player);
+            }
         }
     }
 }
