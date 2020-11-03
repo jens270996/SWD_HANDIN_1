@@ -6,12 +6,9 @@ namespace MementoLib
 {
     public class Game:IOriginator
     {
-        public class GameMemento
-        {
-        }
+       
 
-        public class GameObject
-        {
+        
             private List<Player> players;
 
             public void AddPlayer(string name, string mission, int troops, int countries)
@@ -23,7 +20,7 @@ namespace MementoLib
             {
                 players.Remove(name);
             }
-        }
+        
 
         public class Player
         {
@@ -43,12 +40,20 @@ namespace MementoLib
 
         public MementoLib.IMemento Save()
         {
-            throw new NotImplementedException();
+            var gamestate=new GameMementoState();
+            foreach(var player in players)
+            {
+                gamestate.Players.Add(player);
+            }
+
+            return new GameMemento(gamestate);
+
         }
 
         public void RestoreState(IMemento memento)
         {
-            throw new NotImplementedException();
+            players.Clear();
+            foreach(var player in )
         }
     }
 }
