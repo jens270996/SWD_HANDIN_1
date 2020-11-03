@@ -64,5 +64,13 @@ namespace MementoLib
                 players.Add(player.Clone() as Player);
             }
         }
+
+        public void ShowPlayers()
+        {
+            foreach (var item in players)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
