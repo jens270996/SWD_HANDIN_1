@@ -4,13 +4,16 @@ namespace MementoLib
 {
     public class GameMemento : IMemento
     {
+        private GameMementoState gameState { get; set; }
+        private Game GameOriginator { get; set; }
         public GameMemento(Game gameOriginator, GameMementoState state)
         {
-
+            GameOriginator = gameOriginator;
+            gameState = state;
         }
-        public IMemento Restore()
+        public void Restore()
         {
-            throw new NotImplementedException();
+            GameOriginator.SetState(gameState);
         }
     }
 }
