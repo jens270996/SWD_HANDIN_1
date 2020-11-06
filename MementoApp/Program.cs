@@ -24,7 +24,9 @@ namespace MementoApp
             mementoCaretaker.AddMemento(game.Save());
             Console.WriteLine("Nu laves en memento til denne del.");
             Console.WriteLine("Nu kaldes den første memento tilbage.");
-
+            game.RestoreState(mementoCaretaker.GetMementoAtIndex(0));
+            Console.WriteLine("Nu er vi tilbage fra starten, og vi printer nu spillets data igen.");
+            game.PrintPlayers();
         }
     }
 }
