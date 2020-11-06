@@ -6,5 +6,6 @@ namespace MementoLib
 {
     public interface IMementoState
     {
+       
     }
 }
