@@ -12,7 +12,10 @@ namespace MementoLib
         }
         private List<IMemento> Mementos { get; set; }
 
-       
+       public int GetNumberOfMementos()
+        {
+            return Mementos.Count;
+        }
         public IMemento GetMementoAtIndex(int index)
         {
             
