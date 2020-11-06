@@ -70,7 +70,7 @@ namespace MementoLib
                 Console.WriteLine(PlayerName);
                 Console.WriteLine("Du har missionen " + Mission + ".");
                 Console.WriteLine("Dit antal tropper er " + NumberOfTroops + ".");
-                Console.WriteLine("Du har " + NumberOfTroops + " lande at placerer dine tropper på.");
+                Console.WriteLine("Du har " + NumberOfCountries + " lande at placerer dine tropper på.");
                 Console.WriteLine("---------------------------------");
             }
 
