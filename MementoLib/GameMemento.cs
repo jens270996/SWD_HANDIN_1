@@ -4,9 +4,10 @@ namespace MementoLib
 {
     public class GameMemento : IMemento
     {
-        
-        public IMementoState MementoState { get { return MementoState; } set { } }
 
+        public IMementoState MementoState { get; set; }
+        
+        
         public GameMemento(GameMementoState state)
         {
             
