@@ -4,10 +4,13 @@ using System.Text;
 
 namespace MementoLib
 {
-    public class Game:IOriginator
+    public class Game : IOriginator
     {
-       
 
+        public Game()
+        {
+            players = new List<Player>();
+        }
         
             private List<Player> players;
 
@@ -36,6 +39,15 @@ namespace MementoLib
             private string Mission;
             private int NumberOfTroops;
             private int NumberOfCountries;
+
+            public void Print()
+            {
+                Console.WriteLine(PlayerName);
+                Console.WriteLine("Du har missionen " + Mission + ".");
+                Console.WriteLine("Dit antal tropper er " + NumberOfTroops + ".");
+                Console.WriteLine("Du har " + NumberOfTroops + " lande at placerer dine tropper på.");
+                Console.WriteLine("---------------------------------");
+            }
 
             public object Clone()
             {
@@ -69,7 +81,7 @@ namespace MementoLib
         {
             foreach (var item in players)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.PlayerName);
             }
         }
     }
