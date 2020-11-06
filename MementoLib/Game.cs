@@ -6,10 +6,32 @@ namespace MementoLib
 {
     public class Game:IOriginator
     {
-       
+        public void PrintPlayers()
+        {
+            foreach (var player in players)
+            {
+                player.Print();
 
-        
-            private List<Player> players;
+            }
+        }
+
+        public void AlterTroops(int playerno, int changeintroops)
+        {
+            if(playerno<=players.Count)
+                players[playerno - 1].NumberOfTroops += changeintroops;
+        }
+
+        public void AlterCountries(int playerno, int changeinCountries)
+        {
+            if (playerno <= players.Count)
+                players[playerno - 1].NumberOfCountries += changeinCountries;
+        }
+
+
+
+
+
+        private List<Player> players;
 
             public void AddPlayer(string name, string mission, int troops, int countries)
             {
@@ -34,8 +56,8 @@ namespace MementoLib
 
             public string PlayerName { get; set; }
             private string Mission;
-            private int NumberOfTroops;
-            private int NumberOfCountries;
+            public int NumberOfTroops { get; set; }
+            public int NumberOfCountries { get; set; }
 
             public object Clone()
             {
