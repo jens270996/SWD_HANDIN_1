@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MementoLib
 {
-    public class Game:IOriginator
+    public class Game : IOriginator
     {
         public void PrintPlayers()
         {
@@ -59,6 +59,15 @@ namespace MementoLib
             public int NumberOfTroops { get; set; }
             public int NumberOfCountries { get; set; }
 
+            public void Print()
+            {
+                Console.WriteLine(PlayerName);
+                Console.WriteLine("Du har missionen " + Mission + ".");
+                Console.WriteLine("Dit antal tropper er " + NumberOfTroops + ".");
+                Console.WriteLine("Du har " + NumberOfTroops + " lande at placerer dine tropper på.");
+                Console.WriteLine("---------------------------------");
+            }
+
             public object Clone()
             {
                 return new Player(this.PlayerName, this.Mission, this.NumberOfTroops, this.NumberOfCountries);
@@ -91,7 +100,7 @@ namespace MementoLib
         {
             foreach (var item in players)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.PlayerName);
             }
         }
     }
