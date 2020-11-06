@@ -6,6 +6,12 @@ namespace MementoLib
 {
     public class Game : IOriginator
     {
+
+
+        public Game()
+        {
+            players = new List<Player>();
+        }
         public void PrintPlayers()
         {
             foreach (var player in players)
